@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Bin</title>
+    <style>
+        @media(max-width:600px){
+            div.empty{display: none;}
+            div.vertical{display: block;}
+            div.horizontal{display: none;}
+        }
+        @media(max-width:360px){
+            div.empty{display: block;}
+            div.vertical{display: none;}
+            div.horizontal{display: none;}
+        }
+        @media(min-width:601px){
+            div.empty{display: none;}
+            div.vertical{display: none;}
+            div.horizontal{display: block;}
+        }
+    
+        #display1{
+            display: block;
+            width: 95%;
+            font-size: 25px;
+            text-align: right;
+            background-color: white;
+        }
+        #display2{
+            display: block;
+            width: 95%;
+            font-size: 25px;
+            text-align: right;
+            background-color: white;
+        }
+        table {
+            background-color: rgb(236, 233, 233);
+            padding-top: 17px;
+            padding-left: 17px;
+            padding-right: 17px;
+            border-radius: 0.5cap;
+            text-align: center;
+            vertical-align: middle;
+        }
+        td {
+            padding-top: 5px;
+            padding-left: 3px;
+            padding-right: 3px;
+            vertical-align: top;
+            text-align: center; 
+            margin-bottom: 0%;
+            background-color: white;
+        }
+        .td1{
+            padding-top: 0%;
+            border:none;
+            background-color: rgb(236, 233, 233);
+        }
+        button {   
+            width : 70px;
+            height : 60px;
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+            margin: 4px;
+            font-size: large;
+        }  
+        .button1 {
+            background-color: rgb(218, 215, 215);
+        }
+        .button2{
+            background-color: orange;
+        }
+       
+        button:hover {
+            background-color: white;
+        }
+        .p1{
+            text-align: right;
+            color:purple
+        }
+    </style>
+    <script>
+        let curValue = 0;
+        let operator = '';
+        function numberButton(num) {
+            if(document.getElementById('display1').innerHTML == '0') {
+                document.getElementById('display1').innerHTML = num;
+            } else {
+                document.getElementById('display1').innerHTML += num;
+            }
+            if(document.getElementById('display2').innerHTML == '0') {
+                document.getElementById('display2').innerHTML = num;
+            } else {
+                document.getElementById('display2').innerHTML += num;
+            }
+        }
+        function plusButton(){
+            if(parparseInt(document.getElementById('display1').innerHTML) != 0)
+            {
+                curValue = parseInt(document.getElementById('display1').innerHTML);
+                document.getElementById('display1').innerHTML = '+';
+            }
+            curValue = parseInt(document.getElementById('display2').innerHTML);
+            document.getElementById('display2').innerHTML = '+';
+            operator = '+';
+        }
+        
+        function minusButton(){
+            curValue = parseInt(document.getElementById('display1').innerHTML);
+            document.getElementById('display1').innerHTML = '-';
+            curValue = parseInt(document.getElementById('display2').innerHTML);
+            document.getElementById('display2').innerHTML = '-';
+            operator = '-';
+        }
+        function productButton(){
+            curValue = parseInt(document.getElementById('display1').innerHTML);
+            document.getElementById('display1').innerHTML = 'x';
+            curValue = parseInt(document.getElementById('display2').innerHTML);
+            document.getElementById('display2').innerHTML = 'x';
+            operator = 'x';
+        }
+        
+        function divideButton(){
+            curValue = parseInt(document.getElementById('display1').innerHTML);
+            document.getElementById('display1').innerHTML = '/';
+            curValue = parseInt(document.getElementById('display2').innerHTML);
+            document.getElementById('display2').innerHTML = '/';
+            operator = '/';
+        }
+        function equalButton(){
+            let newValue1 = parseInt(document.getElementById('display1').innerHTML);
+            let newValue2 = parseInt(document.getElementById('display2').innerHTML);
+            if(operator == '+') {
+                document.getElementById('display2').innerHTML = curValue + newValue2;
+            } else if(operator == '-') {
+                document.getElementById('display2').innerHTML = curValue - newValue2;
+            } else if(operator == 'x') {
+                document.getElementById('display2').innerHTML = curValue * newValue2;
+            } else if(operator == '/') {
+                document.getElementById('display1').innerHTML = curValue / newValue2;
+            }
+            if(operator == '+') {
+                document.getElementById('display1').innerHTML = curValue + newValue1;
+            } else if(operator == '-') {
+                document.getElementById('display1').innerHTML = curValue - newValue1;
+            } else if(operator == 'x') {
+                document.getElementById('display1').innerHTML = curValue * newValue1;
+            } else if(operator == '/') {
+                document.getElementById('display1').innerHTML = curValue / newValue1;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+
+    <div class="empty"><p>표시할수 없음.</p></div>
+    <div class="vertical">
+        <table width=360 height=600 border = 1>
+            <tr><td><span id="display1">0</span></td></tr>
+            <tr><td class="td1"><button class="button1">mc</button><button class="button1">m+</button><button class="button1">m-</button><button class="button1">mr</button><br>
+                    <button class="button1">CE</button><button class="button1">√x</button><button class="button1" >%</button><button class="button2 operator" onclick="divideButton();">/</button><br>
+                    <button class="num" onclick="numberButton(7);">7</button><button class="num" onclick="numberButton(8);">8</button><button class="num" onclick="numberButton(9);">9</button><button class="button2 operator" onclick="productButton();" >x</button><br>
+                    <button class="num" onclick="numberButton(4);">4</button><button class="num" onclick="numberButton(5);">5</button><button class="num" onclick="numberButton(6);">6</button><button class="button2 operator" onclick="minusButton();">-</button><br>
+                    <button class="num" onclick="numberButton(1);">1</button><button class="num" onclick="numberButton(2);">2</button><button class="num" onclick="numberButton(3);">3</button><button class="button2 operator" onclick="plusButton();">+</button><br>
+                    <button class="num" onclick="numberButton(0);">0</button><button>.</button><button>+/-</button><button class="button2 operator" onclick="equalButton();">=</button><br>
+                    <button class="button1">π</button><button class="button1">x²</button><button class="button1">R2</button><button class="button1">R0</button><br>
+                    <p class="p1">@copyright Dowon Lee</p>
+                </td></tr>
+        </table>
+    </div>
+    <div class="horizontal">
+        <table width=600 height=400 border=1>
+            <tr><td><span id="display2">0</span></td></tr>
+            <tr><td class="td1"><button class="button1">mc</button><button class="button1">m+</button><button class="num" onclick="numberButton(7);">7</button><button class="num" onclick="numberButton(8);">8</button><button class="num" onclick="numberButton(9);">9</button><button class="button2 operator" onclick="divideButton();">/</button><button class="button1">R2</button><br>
+                    <button class="button1">m-</button><button class="button1">mr</button><button class="num" onclick="numberButton(4);">4</button><button class="num" onclick="numberButton(5);">5</button><button class="num" onclick="numberButton(6);">6</button><button class="button2 operator" onclick="productButton();">x</button><button class="button1">R0</button><br>
+                    <button class="button1">π</button><button class="button1">x²</button><button class="num" onclick="numberButton(1);">1</button><button class="num" onclick="numberButton(2);">2</button><button class="num" onclick="numberButton(3);">3</button><button class="button2 operator" onclick="minusButton();">-</button><button class="button1">CE</button><br>
+                    <button class="button1">√x</button><button class="button1">%</button><button class="num" onclick="numberButton(0);">0</button><button>.</button><button>+/-</button><button class="button2 operator" onclick="plusButton();">+</button><button class="button2 operator" onclick="equalButton();">=</button><br>
+                    <p class="p1">@copyright Dowon Lee</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

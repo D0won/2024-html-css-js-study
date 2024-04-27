@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Bin</title>
+    <style>
+        @media(max-width:600px){
+            div.empty{display: none;}
+            div.vertical{display: block;}
+            div.horizontal{display: none;}
+        }
+        @media(max-width:360px){
+            div.empty{display: block;}
+            div.vertical{display: none;}
+            div.horizontal{display: none;}
+        }
+        @media(min-width:601px){
+            div.empty{display: none;}
+            div.vertical{display: none;}
+            div.horizontal{display: block;}
+        }
+    
+        #display{
+            display: block;
+            width: 95%;
+            font-size: 25px;
+            text-align: right;
+            background-color: white;
+        }
+        table {
+            background-color: rgb(236, 233, 233);
+            padding-top: 17px;
+            padding-left: 17px;
+            padding-right: 17px;
+            border-radius: 0.5cap;
+            text-align: center;
+            vertical-align: middle;
+        }
+        td {
+            padding-top: 5px;
+            padding-left: 3px;
+            padding-right: 3px;
+            vertical-align: top;
+            text-align: center; 
+            margin-bottom: 0%;
+            background-color: white;
+        }
+        .td1{
+            padding-top: 0%;
+            border:none;
+            background-color: rgb(236, 233, 233);
+        }
+        button {   
+            width : 70px;
+            height : 60px;
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+            margin: 4px;
+            font-size: large;
+        }  
+        .button1 {
+            background-color: rgb(218, 215, 215);
+        }
+        .button2{
+            background-color: orange;
+        }
+       
+        button:hover {
+            background-color: white;
+        }
+        .p1{
+            text-align: right;
+            color:purple
+        }
+    </style>
+</head>
+<body>
+    <div class="empty"><p>표시할수 없음.</p></div>
+    <div class="vertical">
+        <table width=360 height=600 border = 1>
+            <tr><td><span id="display">0</span></td></tr>
+            <tr><td class="td1"><button class="button1">mc</button><button class="button1">m+</button><button class="button1">m-</button><button class="button1">mr</button><br>
+                    <button class="button1">CE</button><button class="button1">√x</button><button class="button1" >%</button><button class="button2">/</button><br>
+                    <button>7</button><button>8</button><button>9</button><button class="button2">x</button><br>
+                    <button>4</button><button>5</button><button>6</button><button class="button2">-</button><br>
+                    <button>1</button><button>2</button><button>3</button><button class="button2">+</button><br>
+                    <button>0</button><button>.</button><button>+/-</button><button class="button2">=</button><br>
+                    <button class="button1">π</button><button class="button1">x²</button><button class="button1">R2</button><button class="button1">R0</button><br>
+                    <p class="p1">@copyright Dowon Lee</p>
+                </td></tr>
+        </table>
+    </div>
+    <div class="horizontal">
+        <table width=600 height=400 border=1>
+            <tr><td><span id="display">0</span></td></tr>
+            <tr><td class="td1"><button class="button1">mc</button><button class="button1">m+</button><button>7</button><button>8</button><button>9</button><button class="button2">+</button><button class="button1">R2</button><br>
+                    <button class="button1">m-</button><button class="button1">mr</button><button>4</button><button>5</button><button>6</button><button class="button2">x</button><button class="button1">R0</button><br>
+                    <button class="button1">π</button><button class="button1">x²</button><button>1</button><button>2</button><button>3</button><button class="button2">-</button><button class="button1">CE</button><br>
+                    <button class="button1">√x</button><button class="button1">%</button><button>0</button><button>.</button><button>+/-</button><button class="button2">+</button><button class="button2">=</button><br>
+                    <p class="p1">@copyright Dowon Lee</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
