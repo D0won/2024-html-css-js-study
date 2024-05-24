@@ -1,83 +1,478 @@
+
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <style>
-        img {
-            vertical-align: middle;
-            border: 0;
-            box-sizing: border-box;
-        }
-        body{
-            font-family: "나눔고딕", "Nanum Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
-        .main-container {
-            padding: 15px 0 110px;
-            min-height: 500px;
-            margin-top: 55px;
-        }
-        #header{
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-            margin:0;
-            padding: 0;
-        }
-        
-        #header .logo{
-            padding:0;
-            margin:0;
-            position: fixed;
-            top: 13px;
-            left: 0;
-            display: inline-block;
-            font-size: 20px;
-            font-weight: 600;
-            color:white;
-        }
-        #header #header-container{
-            background: #0c53b4;
-            height: 60px;
-            padding:0;
-            margin:0;
-        }
-        #header .menu{
-            display: inline-block;
-            margin-left: 50px;
-            margin-right: 10px;
-            color: white;
-            font-size: 20px;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-        #content{
-            margin-top: 60px;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>동의대학교 DAP시스템</title>
-</head>
-<body>
-    <div id="header">
-        <div id="header-container">
-            <h1 class="logo"><img style="margin-left:50px; margin-right:10px;"src="dap_logo.png" alt="동의대학교">DAP시스템</h1>
-            <div class="menu" style="margin-left: 700px;">
-                &nbsp
-            </div>
-            <div class="menu">
-                공지사항
-            </div>
-            <div class="menu">
-                학생정보시스템
-            </div>
-            <div class="menu">
-                커리어
-            </div>
-        </div>
-    </div>
-    <div id="content">
 
-    </div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DEU DAP</title>
+	<link rel="stylesheet" href="dap-styles.css">
+</head>
+
+<body>
+	<header>
+		<div id="topBar">
+			<table id="topBarTable">
+				<tr>
+					<div id="logo">
+						<td class="logo logoImg">
+							<img class="logoImg" src="https://dap.deu.ac.kr/Common/images/logo.png" alt="DEU DAP">
+						</td>
+						<td class="logo logoText">
+							<h1 class="menuContent logoText">DAP시스템</h1>
+						</td>
+					</div>
+
+					<div id="menu">
+						<td class="menuContent menuText">
+							<h1 class="menuContent menuText">공지사항</h1>
+						</td>
+
+						<td class="menuContent menuText">
+							<h1 class="menuContent menuText">학생정보시스템</h1>
+						</td>
+
+						<td class="menuContent menuText">
+							<h1 class="menuContent menuText">커리어</h1>
+						</td>
+					</div>
+
+					<div id="search">
+						<td class="searchContent">
+							<input class="searchLabel" type="text" placeholder="검색">
+						</td>
+						<td class="searchContent">
+							<button class="searchButton" onclick="alert('clicked');"></button>
+						</td>
+					</div>
+
+				</tr>
+			</table>
+		</div>
+	</header>
+
+	<main>
+
+		<div id="mainContents">
+
+			<table id="mainContentTable">
+
+				<tr>
+
+					<td class="mainContents" id="profileContent">
+						<table id="profileContentTable">
+							<tr class="personalInfo">
+								<td class="personalInfo">
+									<table class="personalInfo">
+										<tr>
+											<td class="profileImg" rowspan="2">
+												<img class="profileImg"
+													src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png"
+													alt="profile">
+											</td>
+											<td id="profileNum">
+												20223149
+											</td>
+											<td id="logoutContent">
+												<button id="logoutButton" onclick="alert('clicked');"></button>
+											</td>
+										</tr>
+										<tr>
+											<td id="profileName">
+												이도원
+											</td>
+											<td id="profileStatus">
+												재학
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td></td>
+							</tr>
+							<tr id="messageTr">
+								<td></td>
+								<td id="messageTd">
+									쪽지(0)
+								</td>
+							</tr>
+
+							<tr id="counselingInfoTr">
+								<td id="counselingInfoTd" colspan="2">
+									<table id="counselingInfoTable">
+										<tr>
+											<td id="counselingTitle" colspan="4">
+												나의 상담내역
+											</td>
+										</tr>
+										<tr>
+											<td class="counselingContent">
+												2
+												<p class="counselingContentTitle">학과</p>
+											</td>
+											<td class="counselingContent">
+												0
+												<p class="counselingContentTitle">진로취업</p>
+											</td>
+											<td class="counselingContent">
+												0
+												<p class="counselingContentTitle">심리</p>
+											</td>
+											<td class="counselingContent">
+												0
+												<p class="counselingContentTitle">학업</p>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+
+						</table>
+					</td>
+
+					<td class="mainContents" id="yukryangArea" colspan="3">
+						<table id="yukryangTable">
+							<tr>
+								<td id="yukryangTitle" colspan="6">
+									나의 역량 지수(동일학년 최대포인트 대비)
+								</td>
+							</tr>
+							<tr>
+								<td class="yukryangContent">
+									<p>자기경영</p>
+									<img class="yukryangContentImg" src="https://dap.deu.ac.kr/Common/images/core_img01.png">
+									<p>
+										<strong>70</strong>
+										/5,690
+									</p>
+								</td>
+								<td class="yukryangContent">
+									<p>글로컬</p>
+									<img class="yukryangContentImg" src="https://dap.deu.ac.kr/Common/images/core_img02.png">
+									<p>
+										<strong>130</strong>
+										/970
+									</p>
+								</td>
+								<td class="yukryangContent">
+									<p>나눔</p>
+									<img class="yukryangContentImg" src="https://dap.deu.ac.kr/Common/images/core_img03.png">
+									<p>
+										<strong>120</strong>
+										/1,980
+									</p>
+								</td>
+								<td class="yukryangContent">
+									<p>소통</p>
+									<img class="yukryangContentImg" src="https://dap.deu.ac.kr/Common/images/core_img04.png">
+									<p>
+										<strong>80</strong>
+										/1,300
+									</p>
+								</td>
+								<td class="yukryangContent">
+									<p>융합</p>
+									<img class="yukryangContentImg" src="https://dap.deu.ac.kr/Common/images/core_img05.png">
+									<p>
+										<strong>0</strong>
+										/990
+									</p>
+								</td>
+								<td class="yukryangContent">
+									<p>도전성취</p>
+									<img class="yukryangContentImg" src="https://dap.deu.ac.kr/Common/images/core_img06.png">
+									<p>
+										<strong>0</strong>
+										/1630
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td class="mainContents" id="testArea">
+						<table id="testListTable">
+							
+							<tr>
+								<td>
+									<div class="testImg" id="test1"></div>
+								</td>
+								<td class="testName">
+									GRIT 검사
+								</td>
+								<td class="testStatus">
+									<button class="testButton" onclick="alert('clicked');">작 성</button>
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
+									<div class="testImg" id="test2"></div>
+								</td>
+								<td class="testName">
+									직업적성검사
+								</td>
+								<td class="testStatus">
+									<button class="testButton" onclick="alert('clicked');">작 성</button>
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
+									<div class="testImg" id="test3"></div>
+								</td>
+								<td class="testName">
+									직업선호도검사 S형
+								</td>
+								<td class="testStatus">
+									<button class="testButton" onclick="alert('clicked');">작 성</button>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div class="testImg" id="test4"></div>
+								</td>
+								<td class="testName">
+									창업 적성검사
+								</td>
+								<td class="testStatus">
+									<button class="testButton" onclick="alert('clicked');">작 성</button>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div class="testImg" id="test5"></div>
+								</td>
+								<td class="testName">
+									직업가치관 검사
+								</td>
+								<td class="testStatus">
+									<button class="testButton" onclick="alert('clicked');">작 성</button>
+								</td>
+							</tr>
+
+						</table>
+					</td>
+
+					<td class="mainContents" id="mileageArea">
+						<table id="mileageTable">
+							<tr>
+								<td id="mileageTitle">
+									통합마일리지
+									<button class="plusButton" onclick="alert('clicked');"></button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table id="mileageContentTable">
+										<tr>
+											<th class="mileageName">
+												실용지성
+											</th>
+											<th class="mileageName">
+												협력인성
+											</th>
+											<th class="mileageName">
+												창의실천
+											</th>
+										</tr>
+										<tr>
+											<td class="mileageValue">
+												280,000P
+											</td>
+											<td class="mileageValue">
+												80,000P
+											</td>
+											<td class="mileageValue">
+												0P
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td id="mileageSum">
+									360,000P
+								</td>
+							</tr>
+						</table>
+					</td>
+
+					<td class="mainContents" id="employmentArea">
+						<table id="employmentTable">
+							<tr>
+								<td class="employmentImg employmentContent">
+									<img id="employmentImg1" src="https://dap.deu.ac.kr/Common/images/ban_icon01.png">
+								</td>
+								<td class="employmentImg employmentContent">
+									<img id="employmentImg2" src="https://dap.deu.ac.kr/Common/images/ban_icon02.png">
+								</td>
+							</tr>
+							<tr>
+								<td class="employmentName employmentContent">
+									채용정보<br>안내
+								</td>
+								<td class="employmentName employmentContent">
+									DEU-STORY<br>(e-포트폴리오)
+								</td>
+							</tr>
+						</table>
+					</td>
+
+					<td class="mainContents" id="etcArea" rowspan="3">
+						<table id="etcTable">
+							<tr>
+								<td class="etcImg">
+									<img id="etcImg1" src="https://dap.deu.ac.kr/Common/Images/icon07.png">
+								</td>
+								<td class="etcName">
+									통합마일리지
+									<br>
+									장학제도 및 산정기준
+								</td>
+							</tr>
+							<tr>
+								<td class="etcImg">
+									<img id="etcImg2" src="https://dap.deu.ac.kr/Common/Images/icon02.png">
+								</td>
+								<td class="etcName">
+									진로정보활용가이드
+									<br>
+									진로개발 터틀북
+									<br>
+									(학생용)
+								</td>
+							</tr>
+							<tr>
+								<td class="etcImg">
+									<img id="etcImg3" src="https://dap.deu.ac.kr/Common/Images/icon03.png">
+								</td>
+								<td class="etcName">
+									이력서 및 자기소개서
+								</td>
+							</tr>
+							<tr>
+								<td class="etcImg">
+									<img id="etcImg4" src="https://dap.deu.ac.kr/Common/Images/icon10.png">
+								</td>
+								<td class="etcName">
+									한국고용정보원
+									<br>
+									온라인진로교육
+								</td>
+							</tr>
+							<tr>
+								<td class="etcImg">
+									<img id="etcImg5" src="https://dap.deu.ac.kr/Common/Images/icon13.png">
+								</td>
+								<td class="etcName">
+									현장실습 운영시스템
+								</td>
+							</tr>
+							<tr>
+								<td class="etcImg">
+									<img id="etcImg6" src="https://dap.deu.ac.kr/Common/Images/icon15.png">
+								</td>
+								<td class="etcName">
+									에듀스 온라인
+									<br>
+									취업솔루션
+								</td>
+							</tr>
+							<tr>
+								<td class="etcImg">
+									<img id="etcImg7" src="https://dap.deu.ac.kr/Common/Images/icon01.png">
+								</td>
+								<td class="etcName">
+									온라인자격증 취득
+									<br>
+									과정(준비중)
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="mainContents" id="adArea">
+						<img id="adImg" src="https://dap.deu.ac.kr/Common/images/team_banner01.jpg">
+					</td>
+
+					<td class="mainContents" id="notificationArea" colspan="2">
+						<table id="notificationTable">
+							<tr>
+								<td id="notificationTitle">
+									<button id="notifiBtnA" class="notifBtn selected" onclick="notifiButton('notifiBtnA')">비교과프로그램공지</button>
+									<button id="notifiBtnB" class="notifBtn" onclick="notifiButton('notifiBtnB')">학사공지</button>
+									<button id="notifiBtnC" class="notifBtn" onclick="notifiButton('notifiBtnC')">장학공지</button>
+									<button id="notifiBtnD" class="notifBtn" onclick="notifiButton('notifiBtnD')">취업공지</button>
+									<button id="notifiBtnE" class="notifBtn" onclick="notifiButton('notifiBtnE')">교육/모집</button>
+									<button id="notifiBtnF" class="notifBtn" onclick="notifiButton('notifiBtnF')">기숙사공지</button>
+									<button class="plusButton" onclick="alert('clicked');"></button>
+								</td>
+							</tr>
+							<tr>
+								<td id="notificationContent">
+									<ul id="nofitiList">
+										<li>
+											<span id="textA" class="notifcationText"></span>
+											<span class="notificationDate">2024-03-01</span>
+										</li>
+										<li>
+											<span id="textB" class="notifcationText"></span>
+											<span class="notificationDate">2024-03-01</span>
+										</li>
+										<li>
+											<span id="textC" class="notifcationText"></span>
+											<span class="notificationDate">2024-03-01</span>
+										</li>
+										<li>
+											<span id="textD" class="notifcationText"></span>
+											<span class="notificationDate">2024-03-01</span>
+										</li>
+										<li>
+											<span id="textE" class="notifcationText"></span>
+											<span class="notificationDate">2024-03-01</span>
+										</li>
+										<li>
+											<span id="textF" class="notifcationText"></span>
+											<span class="notificationDate">2024-03-01</span>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="mainContents" id="thisMonthArea">
+						<div class="emptyArea">
+						</div>
+					</td>
+
+					<td class="mainContents" id="applicateArea" colspan="2">
+						<div class="emptyArea">
+						</div>
+					</td>
+				</tr>
+
+			</table>
+
+		</div>
+
+	</main>
+
+	<footer>
+		<!-- Footer content goes here -->
+	</footer>
+
+	<script src="dapjs.js"></script>
 </body>
+
 </html>
+<!-- 20233115 주지원과 220223149 이도원 공동제작 -->

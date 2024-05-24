@@ -1,0 +1,489 @@
+body {
+    margin: 0;
+}
+
+#topBar {
+    height: 50px;
+    background-color: #0C53B4;
+    color: black;
+    padding: 10px;
+    margin: 0;
+    text-align: middle;
+}
+
+#topBarTable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin: 0;
+}
+
+.menuContent {
+    font-size: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.logoImg {
+    margin-right: 10px;
+}
+
+.menuContent.logoText {
+    font-weight: normal;
+    margin-right: 200px;
+}
+
+.menuContent.menuText {
+    font-weight: bold;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.searchContent {
+    margin: 0;
+    padding: 0;
+}
+
+.searchLabel {
+    font-size: 13px;
+    color: white;
+    background: #164F9D;
+    font-family: Arial, sans-serif;
+    width: 200px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid;
+}
+
+.searchButton {
+    background: #0e3e7e url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat 2px 0px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+#mainContents {
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    /* Modified to center align the contents */
+    display: flex;
+    /* Added flex display to center align child elements */
+    justify-content: center;
+    /* Added justify-content to center align child elements */
+    align-items: center;
+    /* Added align-items to center align child elements */
+}
+
+#mainContentTable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mainContents {
+    margin: 10px;
+}
+
+#profileContent {
+    background-color: #07408D;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    text-align: middle;
+    width: 300px;
+    height: 200px;
+}
+
+#profileContentTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.profileImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#profileNum {
+    text-align: left;
+    font-size: 15px;
+    height: 10px;
+
+}
+
+#profileName {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 10px;
+}
+
+#logoutContent {
+    display: inline;
+    margin-left: 10px;
+    padding: 0;
+}
+
+#logoutButton {
+    background: #07408D url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat -236px -3px;
+    width: 31px;
+    height: 31px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+#profileStatus {
+    background-color: #5e9a1e;
+    display: inline;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin-left: 10px;
+}
+
+#messageTd {
+    color: #fff;
+    float: right;
+    padding: 5px 8px;
+    background-color: rgba(243, 152, 0, 0.85);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+#counselingInfoTable {
+    width: 100%;
+}
+
+#counselingTitle {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.counselingContent {
+    float: left;
+    width: 24%;
+    background: #205399;
+    padding: 10px 0;
+    margin-left: 1%;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.counselingContentTitle {
+    display: block;
+    font-size: 13px;
+    color: #c1d5f0;
+    font-weight: 400;
+    margin: 0;
+}
+
+#yukryangArea {
+    width: 1100px;
+}
+
+#yukryangTable {
+    width: 1100px;
+    height: 200px;
+    border-collapse: collapse;
+}
+
+#yukryangTitle {
+    width: 1100px;
+    height: 30px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0.1px solid;
+    border-collapse: collapse;
+}
+
+.yukryangContent {
+    float: left;
+    width: 16%;
+    height: 100%;
+    background: white;
+    font-size: 20px;
+    color: black;
+    font-weight: normal;
+    text-align: center;
+    border: 0.1px solid;
+    border-collapse: collapse;
+}
+
+.yukryangContentImg {
+    height: 75px;
+}
+
+#testListTable {
+    width: 100%;
+    height: 200px;
+    border: 1px solid;
+}
+
+.testImg {
+    display: inline-block;
+    width: 16px;
+    height: 21px;
+    margin-right: 15px;
+    border-top: 1px solid #fff;
+}
+
+#test1 {
+    background: #ecf2fe url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat 0px -75px;
+}
+
+#test2 {
+    background: #ecf2fe url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat -68px -75px;
+}
+
+#test3 {
+    background: #ecf2fe url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat -134px -75px;
+}
+
+#test4 {
+    background: #ecf2fe url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat -205px -75px;
+}
+
+#test5 {
+    background: #ecf2fe url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat -273px -75px;
+}
+
+.testName {
+    width: 200px;
+    text-align: left;
+    font-size: 17px;
+    color: black;
+    font-weight: normal;   
+}
+
+.testButton {
+    background: #1c90c6;
+    color: white;
+    width: 50px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+#mileageTable {
+    width: 450px;
+    height: 200px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mileageTitle {
+    width: 1100px;
+    height: 30px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* border: 0.1px solid;
+    border-collapse: collapse; */
+    padding: 0;
+}
+
+.plusButton {
+    background: white url(https://dap.deu.ac.kr/Common/images/sp_icon.png) no-repeat -158px -8px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    float: right;
+}
+
+#mileageContentTable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mileageName {
+    vertical-align: middle;
+    background-color: #246DD1;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ECF3FF;
+    border-bottom: none;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.mileageValue {
+    background: #fafafa;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: #ECF3FF solid 1px;
+}
+
+#mileageSum {
+    background-color: white;
+    font-size: 20px;
+    color: #0C53B4;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+#employmentArea {
+    width: 450px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+#employmentTable {
+    width: 450px;
+    height: 200px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.employmentContent {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.employmentName {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+#etcTable {
+    height: 600px;
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+}
+
+#notificationArea {
+    width: 900px;
+    height: 200px;
+    border-color: black;
+    border: 1px solid;
+}
+
+#notificationTable {
+    width: 900px;
+    height: 200px;
+    border-collapse: collapse;
+}
+
+.notificationTitle {
+    width: 900px;
+    height: 30px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0.1px solid;
+    border-collapse: collapse;
+}
+
+.notifBtn.selected {
+    color: #0c53b4;
+}
+
+.notifBtn {
+    font-size: 16px;
+    text-decoration: none;
+    color: gray;
+    background-color: white;
+    float: left;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0;
+}
+
+#notificationContent {
+    width: 900px;
+    height: 200px;
+    border: 1px solid;
+    text-align: left;
+}
+
+#notifiList {
+    width: 100%;
+    height: 200px;
+    border: 1px solid;
+}
+
+.notificationText {
+    float: left;
+}
+
+.notificationDate {
+    font-size: 13px;
+    color: gray;
+    background-color: white;
+    font-weight: 400;
+    margin: 0;
+    float: right;
+}
+
+.emptyArea {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    line-height: 200px;
+    border-color: black;
+    border: 1px solid;
+}
