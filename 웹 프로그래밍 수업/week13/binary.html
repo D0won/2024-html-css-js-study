@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary</title>
+    <script src="binary.js">
+    </script>
+    <style>
+        #ex{
+            padding : 10px;
+            margin : 10px;
+            border : 1px solid black;
+        }
+
+        #binary{
+            padding : 10px;
+            margin : 10px;
+            border : 1px solid black;
+        }
+        #pro{
+            padding : 10px;
+            margin : 10px;
+            border : 1px solid black;
+        }
+        #red{
+            color : red;
+        }
+        #cbinary{
+            padding : 2px;
+            margin : 10px;
+            
+        }
+        p.bold{
+            font-weight : bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="ex">
+        <h4>10진수에서 2진수로 변환</h4>
+        <ol>
+            <li>10진수를 2로 나누고 나머지를 기록한다.</li>
+            <li>몫이 0이 될 때까지 반복한다.</li>
+            <li>나머지들을 역순으로 배열하면 2진수가 된다.</li>
+        </ol>
+        <h4>2진수 덧셈</h4>
+        <ol>
+            <li>0 + 0 = 0</li>
+            <li>0 + 1 = 1</li>
+            <li>1 + 1 = 10 (자리 올림 발생)</li>
+        </ol>
+    </div>
+    <div>
+        <h4>10진수 입력 ※ <span id="red">음수</span>를 입력할 수도 있음.</h4>
+        <label style="font-weight: bold;">입력1 :&nbsp;</label><input type="text" maxlength="10" style="text-align: center;" id = "input1">
+        <br>
+        <label style="font-weight: bold;">입력2 :&nbsp;</label><input type="text" maxlength="10" style="text-align: center;" id = "input2">
+        <br>
+        <button type="submit" onclick="ConvertToBinary()">변환1</button>
+        <span>※ 변환 버튼을 누르면 아래의 변환된 값 칸에 값이 채워진다.</span>
+    </div>
+    <div id="Bin">
+        <h4>변환된 값</h4>
+        <p id="binary"></p>
+
+    </div>
+    <div>
+        
+    </div>
+</body>
+</html>
