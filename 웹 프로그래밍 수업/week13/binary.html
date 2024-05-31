@@ -7,6 +7,22 @@
     <script src="binary.js">
     </script>
     <style>
+        input[type="text"] {
+            padding-block: 1px;
+            padding-inline: 2px;
+        
+        }
+
+        xw{
+            color: white;
+        }
+
+        label {
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
         #ex{
             padding : 10px;
             margin : 10px;
@@ -31,8 +47,25 @@
             margin : 10px;
             
         }
+        .cb {
+            border: 1px solid #eee;
+            width: 30px;
+            text-align: center;
+        }
+        .di {
+            width: 30px;
+            text-align: center;
+        }
         p.bold{
             font-weight : bold;
+        }
+        div.onebinary{
+            width: 10;
+            height: 10;
+            padding : 10px;
+            margin : 10px;
+            border : 1px solid black;
+            
         }
         
     </style>
@@ -67,7 +100,46 @@
 
     </div>
     <div>
-        
+        <h4>2진수(부호 양 표현)로 변환된 값</h4>
+        <label>
+            <xw>나다0</xw>
+            : 
+        </label>
+        <input class="cb", type="text", maxlength="1", id = "cb9">
+        <input class="cb", type="text", maxlength="1", id = "cb8">
+        <input class="cb", type="text", maxlength="1", id = "cb7">
+        <input class="cb", type="text", maxlength="1", id = "cb6">
+        <input class="cb", type="text", maxlength="1", id = "cb5">
+        <input class="cb", type="text", maxlength="1", id = "cb4">
+        <input class="cb", type="text", maxlength="1", id = "cb3">
+        <input class="cb", type="text", maxlength="1", id = "cb2">
+        <input class="cb", type="text", maxlength="1", id = "cb1">
+        <input class="cb", type="text", maxlength="1", id = "cb0">
+        <br>
+        <label>입력1 : </label>
+        <input class="di", type="text", maxlength="1", id = "a9">
+        <input class="di", type="text", maxlength="1", id = "a8">
+        <input class="di", type="text", maxlength="1", id = "a7">
+        <input class="di", type="text", maxlength="1", id = "a6">
+        <input class="di", type="text", maxlength="1", id = "a5">
+        <input class="di", type="text", maxlength="1", id = "a4">
+        <input class="di", type="text", maxlength="1", id = "a3">
+        <input class="di", type="text", maxlength="1", id = "a2">
+        <input class="di", type="text", maxlength="1", id = "a1">
+        <input class="di", type="text", maxlength="1", id = "a0">
+        <br>
+        <label>입력2 : </label>
+        <input class="di", type="text", maxlength="1", id = "b9">
+        <input class="di", type="text", maxlength="1", id = "b8">
+        <input class="di", type="text", maxlength="1", id = "b7">
+        <input class="di", type="text", maxlength="1", id = "b6">
+        <input class="di", type="text", maxlength="1", id = "b5">
+        <input class="di", type="text", maxlength="1", id = "b4">
+        <input class="di", type="text", maxlength="1", id = "b3">
+        <input class="di", type="text", maxlength="1", id = "b2">
+        <input class="di", type="text", maxlength="1", id = "b1">
+        <input class="di", type="text", maxlength="1", id = "b0">
+        <br>
     </div>
 </body>
 </html>
