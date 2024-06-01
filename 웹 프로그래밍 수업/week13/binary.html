@@ -31,17 +31,18 @@
     </div>
     <div>
         <h4>10진수 입력 ※ <span id="red">음수</span>를 입력할 수도 있음.</h4>
-        <label style="font-weight: bold;">입력1 :&nbsp;</label><input type="text" maxlength="10" style="text-align: center;" id = "input1">
+        <label style="font-weight: bold;">입력1 :&nbsp;</label><input type="number" maxlength="10" style="text-align: center;" id = "input1">
         <br>
-        <label style="font-weight: bold;">입력2 :&nbsp;</label><input type="text" maxlength="10" style="text-align: center;" id = "input2">
+        <label style="font-weight: bold;">입력2 :&nbsp;</label><input type="number" maxlength="10" style="text-align: center;" id = "input2">
         <br>
         <button type="submit" onclick="ConvertToBinary()">변환1</button>
         <span>※ 변환 버튼을 누르면 아래의 변환된 값 칸에 값이 채워진다.</span>
     </div>
-    <div id="Bin">
-        <h4>변환된 값</h4>
-        <p id="binary"></p>
-
+    <h4>변환된 값</h4>
+    <div class="box">  
+        <div id ="result1"></div>
+        <hr>
+        <div id ="result2"></div>
     </div>
     <div>
         <h4>2진수(부호 양 표현)로 변환된 값</h4>
@@ -49,16 +50,16 @@
             <xw>나다0</xw>
             : 
         </label>
-        <input class="cb", type="text", maxlength="1", id = "c9">
-        <input class="cb", type="text", maxlength="1", id = "c8">
-        <input class="cb", type="text", maxlength="1", id = "c7">
-        <input class="cb", type="text", maxlength="1", id = "c6">
-        <input class="cb", type="text", maxlength="1", id = "c5">
-        <input class="cb", type="text", maxlength="1", id = "c4">
-        <input class="cb", type="text", maxlength="1", id = "c3">
-        <input class="cb", type="text", maxlength="1", id = "c2">
-        <input class="cb", type="text", maxlength="1", id = "c1">
-        <input class="cb", type="text", maxlength="1", id = "c0">
+        <input class="cb", type="text", maxlength="1", id = "cb9">
+        <input class="cb", type="text", maxlength="1", id = "cb8">
+        <input class="cb", type="text", maxlength="1", id = "cb7">
+        <input class="cb", type="text", maxlength="1", id = "cb6">
+        <input class="cb", type="text", maxlength="1", id = "cb5">
+        <input class="cb", type="text", maxlength="1", id = "cb4">
+        <input class="cb", type="text", maxlength="1", id = "cb3">
+        <input class="cb", type="text", maxlength="1", id = "cb2">
+        <input class="cb", type="text", maxlength="1", id = "cb1">
+        <input class="cb", type="text", maxlength="1", id = "cb0">
         <br>
         <label>입력1 : </label>
         <input class="di", type="text", maxlength="1", id = "a9">
