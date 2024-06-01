@@ -6,72 +6,10 @@
     <title>Binary</title>
     <script src="binary.js">
     </script>
-    <style>
-        input[type="text"] {
-            padding-block: 1px;
-            padding-inline: 2px;
-        
-        }
-
-        xw{
-            color: white;
-        }
-
-        label {
-            display: inline-block;
-            max-width: 100%;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-        #ex{
-            padding : 10px;
-            margin : 10px;
-            border : 1px solid black;
-        }
-
-        #binary{
-            padding : 10px;
-            margin : 10px;
-            border : 1px solid black;
-        }
-        #pro{
-            padding : 10px;
-            margin : 10px;
-            border : 1px solid black;
-        }
-        #red{
-            color : red;
-        }
-        #cbinary{
-            padding : 2px;
-            margin : 10px;
-            
-        }
-        .cb {
-            border: 1px solid #eee;
-            width: 30px;
-            text-align: center;
-        }
-        .di {
-            width: 30px;
-            text-align: center;
-        }
-        p.bold{
-            font-weight : bold;
-        }
-        div.onebinary{
-            width: 10;
-            height: 10;
-            padding : 10px;
-            margin : 10px;
-            border : 1px solid black;
-            
-        }
-        
-    </style>
+    <link rel="stylesheet" href="binary.css">
 </head>
 <body>
-    <div id="ex">
+    <div class="box">
         <h4>10진수에서 2진수로 변환</h4>
         <ol>
             <li>10진수를 2로 나누고 나머지를 기록한다.</li>
@@ -80,9 +18,15 @@
         </ol>
         <h4>2진수 덧셈</h4>
         <ol>
-            <li>0 + 0 = 0</li>
-            <li>0 + 1 = 1</li>
-            <li>1 + 1 = 10 (자리 올림 발생)</li>
+            <li>이진수 두 개를 자리 맞춰서 더함. 0 + 0은 0, 1 + 0은 1, 1 + 1은 0 쓰고 1 올림.</li>
+            <li>1 + 1로 2가 되면 0 쓰고 다음 자리로 1을 올림. 1 + 1 + 1이면 1 쓰고 다시 1 올림.</li>
+            <li>결과값에 (+)부호 붙임.</li>
+        </ol>
+        <h4>2진수 뺄셈</h4>
+        <ol>
+            <li>이진수 두 개를 자리 맞춰서 위에서 아래로 뺌. 1 - 0은 1, 0 - 0은 0.</li>
+            <li> 0 - 1 같은 상황이면 왼쪽 자리에서 1 빌림. 빌린 자리에서 1을 빼고 빌린 자리 오른쪽은 10으로 계산.</li>
+            <li>결과값에 (-)부호 붙임.</li>
         </ol>
     </div>
     <div>
@@ -105,16 +49,16 @@
             <xw>나다0</xw>
             : 
         </label>
-        <input class="cb", type="text", maxlength="1", id = "cb9">
-        <input class="cb", type="text", maxlength="1", id = "cb8">
-        <input class="cb", type="text", maxlength="1", id = "cb7">
-        <input class="cb", type="text", maxlength="1", id = "cb6">
-        <input class="cb", type="text", maxlength="1", id = "cb5">
-        <input class="cb", type="text", maxlength="1", id = "cb4">
-        <input class="cb", type="text", maxlength="1", id = "cb3">
-        <input class="cb", type="text", maxlength="1", id = "cb2">
-        <input class="cb", type="text", maxlength="1", id = "cb1">
-        <input class="cb", type="text", maxlength="1", id = "cb0">
+        <input class="cb", type="text", maxlength="1", id = "c9">
+        <input class="cb", type="text", maxlength="1", id = "c8">
+        <input class="cb", type="text", maxlength="1", id = "c7">
+        <input class="cb", type="text", maxlength="1", id = "c6">
+        <input class="cb", type="text", maxlength="1", id = "c5">
+        <input class="cb", type="text", maxlength="1", id = "c4">
+        <input class="cb", type="text", maxlength="1", id = "c3">
+        <input class="cb", type="text", maxlength="1", id = "c2">
+        <input class="cb", type="text", maxlength="1", id = "c1">
+        <input class="cb", type="text", maxlength="1", id = "c0">
         <br>
         <label>입력1 : </label>
         <input class="di", type="text", maxlength="1", id = "a9">
@@ -139,7 +83,37 @@
         <input class="di", type="text", maxlength="1", id = "b2">
         <input class="di", type="text", maxlength="1", id = "b1">
         <input class="di", type="text", maxlength="1", id = "b0">
+        <button type="submit" onclick="AddBinary()">더하기</button>
+        <hr>
+        <label>결과 <xw>0</xw>:</label>
+        <input class="di", type="text", maxlength="1", id = "r9">
+        <input class="di", type="text", maxlength="1", id = "r8">
+        <input class="di", type="text", maxlength="1", id = "r7">
+        <input class="di", type="text", maxlength="1", id = "r6">
+        <input class="di", type="text", maxlength="1", id = "r5">
+        <input class="di", type="text", maxlength="1", id = "r4">
+        <input class="di", type="text", maxlength="1", id = "r3">
+        <input class="di", type="text", maxlength="1", id = "r2">
+        <input class="di", type="text", maxlength="1", id = "r1">
+        <input class="di", type="text", maxlength="1", id = "r0">
         <br>
+    </div>
+    <div class ="box">
+        <h4>2진수에서 10진수로 변환</h4>
+        <ol>
+            <li>이진수 각 자리 숫자에 해당 자리의 2의 제곱값 곱함. 예: 1011이면, 1*2^3, 0*2^2, 1*2^1, 1*2^0.</li>
+            <li>계산된 값을 모두 더함. 예: 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0 = 8 + 0 + 2 + 1.</li>
+            <li>더한 값을 10진수로 표현.</li>
+        </ol>
+    </div>
+    <p> <b>10진수로 표현된 계산결과</b></p>
+    <div>
+        <button type="submit" onclick="ConvertToDecimal()">변환2</button>
+        <span>※ 변환 버튼을 누르면 아래에 계산된 값(10진수)이 채워진다.</span>
+        <br>
+        <br>
+        <label>출력 <xw>0</xw>:</label>
+        <input type="text" maxlength="10" id="result">
     </div>
 </body>
 </html>
