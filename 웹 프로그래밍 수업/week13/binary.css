@@ -1,0 +1,66 @@
+
+input[type="text"] {
+    padding-block: 1px;
+    padding-inline: 2px;
+
+}
+
+xw{
+    color: white;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.box{
+    padding : 10px;
+    margin : 10px;
+    border : 1px solid black;
+}
+
+#binary{
+    padding : 10px;
+    margin : 10px;
+    border : 1px solid black;
+}
+#pro{
+    padding : 10px;
+    margin : 10px;
+    border : 1px solid black;
+}
+#red{
+    color : red;
+}
+#result1{
+    margin-top: 20px;
+    text-align: left;
+    white-space: pre-line;
+}
+#result2{
+    margin-top: 20px;
+    text-align: left;
+    white-space: pre-line;
+}
+#result{
+    padding : 5px;
+    margin : 10px;
+    border : 1px solid black;
+    text-align: center;
+}
+
+.cb {
+    width: 30px;
+    border: 1px solid #eee;
+    
+    text-align: center;
+}
+.di {
+    width: 30px;
+    text-align: center;
+}
+
+
+
