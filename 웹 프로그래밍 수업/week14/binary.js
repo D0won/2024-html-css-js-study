@@ -77,19 +77,15 @@ function ConvertToBinary() {
     binary2 = binary2 || '0';
 
     // Pad binary numbers to 10 bits
-    binary1 = binary1.padStart(9, '0');
-    binary2 = binary2.padStart(9, '0');
+    binary1 = binary1.padStart(10, '0');
+    binary2 = binary2.padStart(10, '0');
 
     if (sinput1 < 0) {
-        binary1 = binary1 + '1';
-    }
-    else
-    {
-        binary1 = binary1 + '0';
+        binary1 = twoComplement(binary1);
     }
 
     if (sinput2 < 0) {
-        binary2 = binary2 + '1' 
+        binary2 = twoComplement(binary2);
     }
 
     const result1Text = [
@@ -120,6 +116,8 @@ function AddBinary() {
     
     var c = 0;
     for(var i = 0; i < 10; i++) {
+        (function(i) {
+            setTimeout(function() {
                 if(parseInt(binary1[9-i]) + parseInt(binary2[9-i]) + c == 0) {
                     document.getElementById('r' + (i)).value = 0;
                     document.getElementById('cb' + (i)).value = 0;
@@ -141,7 +139,9 @@ function AddBinary() {
                     c = 1;
                 }
                 
-            } 
+            }, i * 250); // 0.25초 간격으로 설정
+        })(i);
+        
     }
 }
 
