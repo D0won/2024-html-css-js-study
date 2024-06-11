@@ -19,35 +19,15 @@ function typeWriter(element, lines, delay = 100, lineDelay = 500) {
     addLetter();
 }
 
-function twoComplement(binary) {
-    // Flip bits
-    let flipped = '';
-    for (let i = 0; i < binary.length; i++) {
-        flipped += binary[i] === '0' ? '1' : '0';
-    }
-    // Add 1 to the flipped bits
-    let carry = 1;
-    let result = '';
-    for (let i = binary.length - 1; i >= 0; i--) {
-        let bitSum = parseInt(flipped[i]) + carry;
-        if (bitSum === 2) {
-            result = '0' + result;
-            carry = 1;
-        } else {
-            result = bitSum + result;
-            carry = 0;
-        }
-    }
-    return result;
-}
-
 let binary1 = '';
 let binary2 = '';
+let sinput1 = 0;
+let sinput2 = 0;
 function ConvertToBinary() {
     var input1 = document.getElementById("input1").value;
     var input2 = document.getElementById("input2").value;
-    var sinput1 = parseInt(input1, 10);
-    var sinput2 = parseInt(input2, 10);
+    sinput1 = parseInt(input1, 10);
+    sinput2 = parseInt(input2, 10);
     const result1 = document.getElementById('result1');
     const result2 = document.getElementById('result2');
     result1.innerHTML = '';
@@ -76,20 +56,25 @@ function ConvertToBinary() {
     binary1 = binary1 || '0';
     binary2 = binary2 || '0';
 
-    // Pad binary numbers to 10 bits
+    
     binary1 = binary1.padStart(9, '0');
+    
     binary2 = binary2.padStart(9, '0');
 
     if (sinput1 < 0) {
-        binary1 = binary1 + '1';
+        binary1 = '1' + binary1;
     }
     else
     {
-        binary1 = binary1 + '0';
+        binary1 = '0' + binary1;    
     }
 
     if (sinput2 < 0) {
-        binary2 = binary2 + '1' 
+        binary2 = '1' + binary2; 
+    }
+    else
+    {
+        binary2 = '0' + binary2;
     }
 
     const result1Text = [
@@ -109,6 +94,14 @@ function ConvertToBinary() {
     typeWriter(result1, result1Text, 50, 200);
     typeWriter(result2, result2Text, 50, 200);
 
+    if(Math.abs(sinput1)< Math.abs(sinput2))
+    {
+        alert("절댓값 Input1이 절댓값 Input2보다 작습니다. Input1과 Input2를 교환합니다.");
+        var temp = binary1;
+        binary1 = binary2;
+        binary2 = temp;
+    }
+    
     for (var i = 0; i < 10; i++) {
         document.getElementById('a' + (9 - i)).value = binary1[i];
         document.getElementById('b' + (9 - i)).value = binary2[i];
@@ -117,31 +110,57 @@ function ConvertToBinary() {
 
 function AddBinary() {
     var result = parseInt(binary1) + parseInt(binary2);
-    
-    var c = 0;
-    for(var i = 0; i < 10; i++) {
-                if(parseInt(binary1[9-i]) + parseInt(binary2[9-i]) + c == 0) {
-                    document.getElementById('r' + (i)).value = 0;
-                    document.getElementById('cb' + (i)).value = 0;
-                    c = 0;
-                }
-                else if(parseInt(binary1[9-i]) + parseInt(binary2[9-i]) + c == 1) {
-                    document.getElementById('r' + (i)).value = 1;
-                    document.getElementById('cb' + (i)).value = 0;
-                    c = 0;
-                }
-                else if(parseInt(binary1[9-i]) + parseInt(binary2[9-i]) + c == 2) {
-                    document.getElementById('r' + (i)).value = 0;
-                    document.getElementById('cb' + (i)).value = 1;
-                    c = 1;
-                }
-                else {
-                    document.getElementById('r' + (i)).value = 1;
-                    document.getElementById('cb' + (i)).value = 1;
-                    c = 1;
-                }
-                
-            } 
+    if(sinput1 > 0 && sinput2 > 0 || sinput1 < 0 && sinput2 < 0) {
+        var c = 0;
+        for(var i = 0; i < 9; i++) {
+            (function(i) {
+                setTimeout(function() {
+            if(parseInt(binary1[9-i]) + parseInt(binary2[9-i]) + c == 0) {
+                document.getElementById('r' + (i)).value = 0;
+                document.getElementById('cb' + (i)).value = 0;
+                c = 0;
+            }
+            else if(parseInt(binary1[9-i]) + parseInt(binary2[9-i]) + c == 1) {
+                document.getElementById('r' + (i)).value = 1;
+                document.getElementById('cb' + (i)).value = 0;
+                c = 0;
+            }
+            else if(parseInt(binary1[9-i]) + parseInt(binary2[9-i]) + c == 2) {
+                document.getElementById('r' + (i)).value = 0;
+                document.getElementById('cb' + (i)).value = 1;
+                c = 1;
+            }
+            else {
+                document.getElementById('r' + (i)).value = 1;
+                document.getElementById('cb' + (i)).value = 1;
+                c = 1;
+            }
+
+        }, i*250); // 0.25초 간격으로 설정
+         })(i);
+    }
+        if(sinput1 < 0 && sinput2 < 0)
+        {
+            document.getElementById('r' + (9)).value = 1;
+        }
+        else
+        {
+            document.getElementById('r' + (9)).value = 0;
+        
+        }
+    }
+    else
+    {
+        var br = 0;
+        for(var i = 0; i < 10; i++) {
+            (function(i) {
+            setTimeout(function() {
+            document.getElementById('r' + (i)).value = (parseInt(binary1[9-i]) ^ parseInt(binary2[9-i]))^br; 
+            document.getElementById('cb' + (i)).value =br;
+            br = br & (~(parseInt(binary1[9-i]) ^ parseInt(binary2[9-i]))) | ((~parseInt(binary1[9-i])) & parseInt(binary2[9-i]))
+            }, i*250); // 0.25초 간격으로 설정
+        })(i);
+        } 
     }
 }
 
