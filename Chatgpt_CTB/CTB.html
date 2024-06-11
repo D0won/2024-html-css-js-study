@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binary Calculator</title>
+    <style>
+        .input-box { width: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Binary Calculator</h1>
+    <div>
+        <label for="input1">Input 1:</label>
+        <input type="text" id="input1" class="input-box">
+        <label for="input2">Input 2:</label>
+        <input type="text" id="input2" class="input-box">
+    </div>
+    <div>
+        <button onclick="ConvertToBinary()">Convert to Binary</button>
+        <button onclick="AddBinary()">Add Binary</button>
+        <button onclick="ConvertToDecimal()">Convert to Decimal</button>
+    </div>
+    <div>
+        <h3>Binary Representation</h3>
+        <pre id="result1"></pre>
+        <pre id="result2"></pre>
+    </div>
+    <div>
+        <h3>Binary Addition</h3>
+        <table>
+            <tr>
+                <td><input type="text" id="a0" class="input-box"></td>
+                <td><input type="text" id="a1" class="input-box"></td>
+                <td><input type="text" id="a2" class="input-box"></td>
+                <td><input type="text" id="a3" class="input-box"></td>
+                <td><input type="text" id="a4" class="input-box"></td>
+                <td><input type="text" id="a5" class="input-box"></td>
+                <td><input type="text" id="a6" class="input-box"></td>
+                <td><input type="text" id="a7" class="input-box"></td>
+                <td><input type="text" id="a8" class="input-box"></td>
+                <td><input type="text" id="a9" class="input-box"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="b0" class="input-box"></td>
+                <td><input type="text" id="b1" class="input-box"></td>
+                <td><input type="text" id="b2" class="input-box"></td>
+                <td><input type="text" id="b3" class="input-box"></td>
+                <td><input type="text" id="b4" class="input-box"></td>
+                <td><input type="text" id="b5" class="input-box"></td>
+                <td><input type="text" id="b6" class="input-box"></td>
+                <td><input type="text" id="b7" class="input-box"></td>
+                <td><input type="text" id="b8" class="input-box"></td>
+                <td><input type="text" id="b9" class="input-box"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="r0" class="input-box"></td>
+                <td><input type="text" id="r1" class="input-box"></td>
+                <td><input type="text" id="r2" class="input-box"></td>
+                <td><input type="text" id="r3" class="input-box"></td>
+                <td><input type="text" id="r4" class="input-box"></td>
+                <td><input type="text" id="r5" class="input-box"></td>
+                <td><input type="text" id="r6" class="input-box"></td>
+                <td><input type="text" id="r7" class="input-box"></td>
+                <td><input type="text" id="r8" class="input-box"></td>
+                <td><input type="text" id="r9" class="input-box"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="cb0" class="input-box"></td>
+                <td><input type="text" id="cb1" class="input-box"></td>
+                <td><input type="text" id="cb2" class="input-box"></td>
+                <td><input type="text" id="cb3" class="input-box"></td>
+                <td><input type="text" id="cb4" class="input-box"></td>
+                <td><input type="text" id="cb5" class="input-box"></td>
+                <td><input type="text" id="cb6" class="input-box"></td>
+                <td><input type="text" id="cb7" class="input-box"></td>
+                <td><input type="text" id="cb8" class="input-box"></td>
+                <td><input type="text" id="cb9" class="input-box"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h3>Decimal Addition Result</h3>
+        <input type="text" id="result" class="input-box">
+    </div>
+    <script>
+        function typeWriter(element, lines, delay = 100, lineDelay = 500) {
+            let lineIndex = 0;
+            let charIndex = 0;
+
+            function addLetter() {
+                if (lineIndex < lines.length) {
+                    if (charIndex < lines[lineIndex].length) {
+                        element.innerHTML += lines[lineIndex].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(addLetter, delay);
+                    } else {
+                        element.innerHTML += '\n';
+                        charIndex = 0;
+                        lineIndex++;
+                        setTimeout(addLetter, lineDelay);
+                    }
+               }
+           }
+            addLetter();
+        }
+
+        function ConvertToBinary() {
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var sinput1 = parseInt(input1, 10);
+            var sinput2 = parseInt(input2, 10);
+            const result1 = document.getElementById('result1');
+            const result2 = document.getElementById('result2');
+            result1.innerHTML = '';
+            result2.innerHTML = '';
+            input1 = Math.abs(sinput1);
+            input2 = Math.abs(sinput2);
+            const step1 = [];
+            const step2 = [];
+            let binary1 = '';
+            let binary2 = '';
+
+            while (input1 > 0) {
+                var remainder = input1 % 2;
+                step1.push(`${input1} ÷ 2 = ${Math.floor(input1 / 2)}...${remainder}`);
+                binary1 = remainder + binary1;
+                input1 = Math.floor(input1 / 2);
+            }
+
+            while (input2 > 0) {
+                var remainder = input2 % 2;
+                step2.push(`${input2} ÷ 2 = ${Math.floor(input2 / 2)}...${remainder}`);
+                binary2 = remainder + binary2;
+                input2 = Math.floor(input2 / 2);
+            }
+
+            binary1 = binary1 || '0';
+            binary2 = binary2 || '0';
+
+            // Pad binary numbers to 10 bits
+            binary1 = binary1.padStart(10, '0');
+            binary2 = binary2.padStart(10, '0');
+
+            if (sinput1 < 0) {
+                binary1 = twoComplement(binary1);
+            }
+
+            if (sinput2 < 0) {
+                binary2 = twoComplement(binary2);
+            }
+
+            const result1Text = [
+                `Input1: ${sinput1}`,
+                `Input1's Binary: ${binary1}`,
+                `Steps:`,
+                ...step1
+            ];
+
+            const result2Text = [
+                `Input2: ${sinput2}`,
+                `Input2's Binary: ${binary2}`,
+                `Steps:`,
+                ...step2
+            ];
+
+            typeWriter(result1, result1Text, 50, 200);
+            typeWriter(result2, result2Text, 50, 200);
+
+            for (var i = 0; i < 10; i++) {
+                document.getElementById('a' + (9 - i)).value = binary1[i];
+                document.getElementById('b' + (9 - i)).value = binary2[i];
+            }
+        }
+
+        function twoComplement(binary) {
+            // Flip bits
+            let flipped = '';
+            for (let i = 0; i < binary.length; i++) {
+                flipped += binary[i] === '0' ? '1' : '0';
+            }
+            // Add 1 to the flipped bits
+            let carry = 1;
+            let result = '';
+            for (let i = binary.length - 1; i >= 0; i--) {
+                let bitSum = parseInt(flipped[i]) + carry;
+                if (bitSum === 2) {
+                    result = '0' + result;
+                    carry = 1;
+                } else {
+                    result = bitSum + result;
+                    carry = 0;
+                }
+            }
+            return result;
+        }
+
+        function AddBinary() {
+            var binary1 = '';
+            var binary2 = '';
+            for (var i = 0; i < 10; i++) {
+                binary1 += document.getElementById('a' + (9 - i)).value;
+                binary2 += document.getElementById('b' + (9 - i)).value;
+            }
+
+            let carry = 0;
+            let result = '';
+
+            for (let i = 9; i >= 0; i--) {
+                let bitSum = parseInt(binary1[i]) + parseInt(binary2[i]) + carry;
+                if (bitSum === 0) {
+                    result = '0' + result;
+                    carry = 0;
+                } else if (bitSum === 1) {
+                    result = '1' + result;
+                    carry = 0;
+                } else if (bitSum === 2) {
+                    result = '0' + result;
+                    carry = 1;
+                } else {
+                    result = '1' + result;
+                    carry = 1;
+                }
+            }
+
+            for (var i = 0; i < 10; i++) {
+                document.getElementById('r' + i).value = result[i];
+                document.getElementById('cb' + i).value = carry;
+            }
+        }
+
+        function ConvertToDecimal() {
+            var binary1 = document.getElementById("input1").value;
+            var binary2 = document.getElementById("input2").value;
+            var decimal1 = parseInt(binary1, 2);
+            var decimal2 = parseInt(binary2, 2);
+            var result = decimal1 + decimal2;
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+</html>
