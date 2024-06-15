@@ -40,7 +40,7 @@
             for (i = 0; i < size; i++) {
                 for (j = 0; j < size; j++) {
                     id = i * size + j; // 각 셀의 고유 ID
-                    document.write(`<div class=cell id=${id} onclick='Toggle(this, ${id});'></div>`);
+                    document.write(`<div class=cell id=${id} onclick='Toggle(this, ${id});'></div>`); // 셀을 화면에 출력 (div 태그) 및 클릭 이벤트 추가 (Toggle 함수 호출) 
                 }
                 document.write("<br/>"); // 행 끝에 줄바꿈 추가
             }
